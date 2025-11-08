@@ -132,6 +132,12 @@ pub fn lex(input: &str) -> Result<Vec<Token>, LexerError> {
             }
             c if c.is_whitespace() => {
                 chars.next();
+                if c =='\n' {
+                    line+=1;
+                    column=0;
+                }else{
+                    column+=1;
+                }
             },
             _ => {
                 let naughty = chars.next().unwrap();
