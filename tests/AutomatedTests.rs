@@ -1,7 +1,7 @@
 use std::fs;
 use std::path::Path;
-use JSON_parse::lexer::lex;
-use JSON_parse::parser::parse;
+use json_parse::lexer::lex;
+use json_parse::parser::parse;
 
 fn test_json_file(file_path: &str, should_pass: bool) {
     let contents = fs::read_to_string(file_path)
